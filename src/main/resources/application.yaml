@@ -1,0 +1,22 @@
+server:
+  port: 18085
+
+spring:
+  profiles:
+    active: local
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-alias-package: com.ferrum121308.book.entity.model
+  configuration:
+    cache-enabled: false
+    lazy-loading-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+    db-config:
+      id-type: ASSIGN_ID
+      logic-delete-field: del_status
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
