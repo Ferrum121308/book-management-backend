@@ -2,6 +2,7 @@ package com.ferrum121308.book.entity.model;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.ferrum121308.book.entity.model.common.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book {
+public class Book extends BaseEntity {
 
 	@TableId
 	private Long bookId;
@@ -37,8 +38,8 @@ public class Book {
 	private Integer position;
 	// 是否借出 0默认未借出，1已借出
 	private Integer lendStatus;
-	private Date createTime;
-	private Date updateTime;
+
+	// 上架时间
 	private Date pushTime;
 	@TableField(exist = false)
 	private Region region;

@@ -1,12 +1,10 @@
 package com.ferrum121308.book.entity.model;
 
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.ferrum121308.book.entity.model.common.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 /**
  * @Auther: th
@@ -16,7 +14,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Shell {
+public class Shell extends BaseEntity {
 
 	@TableId
 	private Long shellId;
@@ -25,9 +23,5 @@ public class Shell {
 	private String shellNum;
 	private Integer totalBookAmount;
 	private Integer currentBookAmount;
-	private Date createTime;
-	private Date updateTime;
-	@TableLogic
-	private Integer delStatus;
 
 }

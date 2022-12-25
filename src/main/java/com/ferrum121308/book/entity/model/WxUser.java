@@ -1,13 +1,10 @@
 package com.ferrum121308.book.entity.model;
 
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.ferrum121308.book.entity.model.common.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @Auther: th
@@ -18,7 +15,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class WxUser implements Serializable {
+public class WxUser extends BaseEntity {
 
 	@TableId
 	private Long userId;
@@ -29,9 +26,5 @@ public class WxUser implements Serializable {
 	private String unionId;
 	private Integer status;
 	private String token;
-	private Date createTime;
-	private Date updateTime;
-	@TableLogic
-	private Integer delStatus;
 
 }

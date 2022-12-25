@@ -1,12 +1,10 @@
 package com.ferrum121308.book.entity.model;
 
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.ferrum121308.book.entity.model.common.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 /**
  * @Auther: th
@@ -17,7 +15,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SysUser{
+public class SysUser extends BaseEntity {
 
 	@TableId
 	private Long userId;
@@ -27,9 +25,5 @@ public class SysUser{
 	private String userEmail;
 	private String loginPassword;
 	private Integer status;
-	@TableLogic
-	private Integer delStatus;
-	private Date createTime;
-	private Date updateTime;
 
 }

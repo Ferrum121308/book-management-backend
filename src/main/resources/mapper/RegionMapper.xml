@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ferrum121308.book.mapper.RegionMapper">
+
+    <resultMap id="BaseEntity" type="com.ferrum121308.book.entity.model.Region">
+        <id property="regionId" column="region_id" />
+        <result property="regionName" column="region_name" />
+        <result property="regionCode" column="region_code" />
+        <result property="createTime" column="create_time" />
+        <result property="updateTime" column="update_time" />
+        <result property="delStatus" column="del_status" />
+    </resultMap>
+
+    <select id="baseSelect">
+        select
+            region_id, region_name, region_code, create_time, update_time, del_status
+        from region
+    </select>
+
+
+</mapper>
