@@ -1,2 +1,16 @@
 server:
   port: 8150
+spring:
+  profiles:
+    active: prod
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  type-aliases-package: com.ferrum.book.entity
+  global-config:
+    banner: false
+    db-config:
+      refresh-mapper: true
+      db-type: mysql
+  configuration:
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

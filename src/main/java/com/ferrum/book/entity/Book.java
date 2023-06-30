@@ -1,14 +1,11 @@
 package com.ferrum.book.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import lombok.Getter;
-import lombok.Setter;
+
+import lombok.*;
 
 /**
  * <p>
@@ -18,8 +15,9 @@ import lombok.Setter;
  * @author th
  * @since 2023-06-21
  */
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @TableName("book")
 public class Book {
 
@@ -88,6 +86,18 @@ public class Book {
      */
     @TableField("upload_time")
     private LocalDateTime uploadTime;
+
+	/**
+	 * 登记时间
+	 */
+	@TableField(value = "create_time", fill = FieldFill.INSERT)
+	private LocalDateTime createTime;
+
+	/**
+	 * 修改时间
+	 */
+	@TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
+	private LocalDateTime updateTime;
 
     /**
      * 删除标记，默认0未删除，1删除
